@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>button</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    
+    <style type="text/css">
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        background: #222;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .video {
+        width: 800px;
+        height: 450px;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(https://images.pexels.com/photos/697244/pexels-photo-697244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .play-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgb(247, 247, 247);
+        color: #fff;
+        font-size: 50px;
+        width: 100px;
+        height: 100px;
+        z-index: 2;
+        border-radius: 100%;
+        position: relative;
+      }
+      .play-btn:before {
+        content: "";
+        position: absolute;
+        border: 15px solid #fff;
+        border-radius: 50%;
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        animation: bloom1 1.5s linear infinite;
+        opacity: 0;
+        z-index: 1;
+      }
+      .play-btn:after {
+        content: "";
+        position: absolute;
+        border: 15px solid #fff;
+        border-radius: 50%;
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        animation: bloom2 1.5s linear infinite;
+        opacity: 0;
+        animation-delay: 0.4s;
+        z-index: 1;
+      }
+      @keyframes bloom1 {
+        0% {
+          transform: scale(0.5);
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.5);
+        }
+      }
+      @keyframes bloom2 {
+        0% {
+          transform: scale(0.5);
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.5);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="video">
+      <div class="play-btn">
+        <!-- <ion-icon name="play"></ion-icon> -->
+        <img src="./play-btn.svg" alt="">
+      </div>
+    </div>
+  </body>
+</html>
